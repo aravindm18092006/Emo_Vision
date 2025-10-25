@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Detection</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="video-container">
+            <video id="webcam" autoplay playsinline></video>
+            <canvas id="overlay"></canvas>
+        </div>
+        
+        <div class="controls">
+            <button id="snapshot">Take Snapshot</button>
+        </div>
+
+        <div class="emotion-history">
+            <canvas id="emotionChart"></canvas>
+        </div>
+
+        <div class="snapshots-gallery">
+            <h3>Snapshots</h3>
+            <div id="gallery"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
