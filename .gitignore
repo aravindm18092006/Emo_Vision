@@ -16,6 +16,10 @@ venv/
 .idea/
 .DS_Store
 
+# Node
+node_modules/
+package-lock.json
+
 # pip
 pip-wheel-metadata/
 *.egg-info/
