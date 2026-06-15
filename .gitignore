@@ -11,6 +11,13 @@ frontend/env/
 venv/
 .venv/
 
+# Large binary/compiled files
+*.dll
+*.pyd
+*.lib
+*.exe
+*.so
+
 # Editor
 .vscode/
 .idea/
