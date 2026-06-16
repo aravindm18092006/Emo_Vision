@@ -1,5 +1,6 @@
 // Configuration
-const API_URL = window.location.origin; // This will automatically use the correct server URL
+// When deployed on Vercel, set this to your Render backend URL
+const API_URL = window.ENV_API_URL || window.location.origin;
 const EMOTIONS = ['angry', 'disgust', 'fear', 'happy', 'sad', 'surprise', 'neutral'];
 
 // Add error handling for fetch requests
