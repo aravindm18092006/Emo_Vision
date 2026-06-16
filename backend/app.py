@@ -15,7 +15,7 @@ logging.basicConfig(level=logging.DEBUG)
 app = Flask(__name__, static_folder='../frontend', static_url_path='')
 CORS(app, resources={
     r"/*": {
-        "origins": ["http://localhost:5000", "http://127.0.0.1:5000"],
+        "origins": "*",
         "methods": ["GET", "POST"],
         "allow_headers": ["Content-Type"]
     }
