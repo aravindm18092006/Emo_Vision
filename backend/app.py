@@ -33,6 +33,10 @@ emotion_detector = EmotionDetector()
 def index():
     return send_from_directory(app.static_folder, 'index.html')
 
+@app.route('/health')
+def health():
+    return jsonify({'status': 'ok'})
+
 @app.route('/detect', methods=['POST'])
 def detect_emotion():
     try:
