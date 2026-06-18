@@ -283,6 +283,11 @@ async function detectionLoop() {
     }
 }
 
+// Keep backend alive by pinging every 10 minutes
+setInterval(() => {
+    fetch(`${API_URL}/`).catch(() => {});
+}, 10 * 60 * 1000);
+
 // Event listeners
 snapshotBtn.addEventListener('click', takeSnapshot);
 
