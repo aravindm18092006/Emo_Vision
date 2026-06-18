@@ -2,7 +2,7 @@ services:
   - type: web
     name: emo-vision
     runtime: python
-    rootDir: backend
+    rootDir: emotion-recogonition/backend
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn app:app
     envVars:
