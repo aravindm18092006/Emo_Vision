@@ -15,8 +15,13 @@ logging.basicConfig(level=logging.DEBUG)
 app = Flask(__name__, static_folder='../frontend', static_url_path='')
 CORS(app, resources={
     r"/*": {
-        "origins": "*",
-        "methods": ["GET", "POST"],
+        "origins": [
+            "https://emo-vision-xi.vercel.app",
+            "https://emo-vision.vercel.app",
+            "http://localhost:5000",
+            "http://127.0.0.1:5000"
+        ],
+        "methods": ["GET", "POST", "OPTIONS"],
         "allow_headers": ["Content-Type"]
     }
 })
