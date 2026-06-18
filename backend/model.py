@@ -4,7 +4,7 @@ import numpy as np
 
 class EmotionDetector:
     def __init__(self):
-        self.detector = FER(mtcnn=True)
+        self.detector = FER(mtcnn=False)
     
     def detect_emotions(self, image):
         # Detect emotions in the image
