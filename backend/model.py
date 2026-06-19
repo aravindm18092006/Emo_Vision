@@ -4,24 +4,26 @@ import numpy as np
 
 class EmotionDetector:
     def __init__(self):
-        self.detector = FER(mtcnn=False)
+        self.detector = None
+
+    def _get_detector(self):
+        if self.detector is None:
+            self.detector = FER(mtcnn=False)
+        return self.detector
     
     def detect_emotions(self, image):
-        # Detect emotions in the image
-        results = self.detector.detect_emotions(image)
+        # Resize to reduce memory usage
+        image = cv2.resize(image, (320, 240))
+        results = self._get_detector().detect_emotions(image)
         
         if not results:
             return {'faces': []}
         
-        # Format the results
         faces = []
         for face in results:
             emotions = face['emotions']
             box = face['box']
-            
-            # Get the dominant emotion
             dominant_emotion = max(emotions.items(), key=lambda x: x[1])[0]
-            
             faces.append({
                 'box': box,
                 'emotions': emotions,
