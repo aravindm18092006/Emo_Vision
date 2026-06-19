@@ -248,7 +248,7 @@ async function detectionLoop() {
                 context.drawImage(video, 0, 0);
                 
                 // Get image data and detect emotions
-                const imageData = canvas.toDataURL('image/jpeg', 0.3);
+                const imageData = canvas.toDataURL('image/jpeg', 0.7);
                 const result = await detectEmotions(imageData);
                 
                 if (result && result.faces) {
