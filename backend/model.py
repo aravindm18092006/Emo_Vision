@@ -12,7 +12,6 @@ class EmotionDetector:
         return self.detector
     
     def detect_emotions(self, image):
-        # Resize to reduce memory usage
         image = cv2.resize(image, (320, 240))
         results = self._get_detector().detect_emotions(image)
         
@@ -21,8 +20,8 @@ class EmotionDetector:
         
         faces = []
         for face in results:
-            emotions = face['emotions']
-            box = face['box']
+            emotions = {k: float(v) for k, v in face['emotions'].items()}
+            box = [int(x) for x in face['box']]
             dominant_emotion = max(emotions.items(), key=lambda x: x[1])[0]
             faces.append({
                 'box': box,
